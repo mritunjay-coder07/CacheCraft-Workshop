@@ -1,13 +1,47 @@
 const express = require('express');
 const router = express.Router();
-const {cacheMiddleWare} = require('../Middleware/middleWare.js')
 
-const {getProducts,getProduct} = require("../Controller/controllers.js")
+const { cacheMiddleware } = require('../Middleware/middleWare.js');
 
-router.get("/products",cacheMiddleWare,getProducts);
+const {
+    getProducts,
+    getProduct,
+    postProduct,
+    putProduct,
+    patchProductController,
+    removeProduct
+} = require("../Controller/controllers.js");
 
-router.get("/products/:id",cacheMiddleWare,getProduct);
+router.get(
+    "/products",
+    cacheMiddleware,
+    getProducts
+);
+
+router.get(
+    "/products/:id",
+    cacheMiddleware,
+    getProduct
+);
+
+router.post(
+    "/products",
+    postProduct
+);
+
+router.put(
+    "/products/:id",
+    putProduct
+);
+
+router.patch(
+    "/products/:id",
+    patchProductController
+);
+
+router.delete(
+    "/products/:id",
+    removeProduct
+);
 
 module.exports = router;
-
-

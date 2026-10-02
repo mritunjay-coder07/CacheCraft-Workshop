@@ -2,7 +2,7 @@
   {
     "url": "/products",
     "product": {
-      "dateAdded": 1790955487237,
+      "dateAdded": 1790961048002,
       "product": [
         {
           "id": 1,
@@ -23,18 +23,28 @@
           "id": 4,
           "name": "Mouse",
           "price": 19
+        },
+        {
+          "id": 5,
+          "name": "Laptop",
+          "price": 79999
+        },
+        {
+          "id": 6,
+          "name": "macbook",
+          "price": 10000000000000
         }
       ]
     }
   },
   {
-    "url": "/products/1",
+    "url": "/products/6",
     "product": {
-      "dateAdded": 1790955502249,
+      "dateAdded": 1790961052580,
       "product": {
-        "id": 1,
-        "name": "Keyboard",
-        "price": 49.99
+        "id": 6,
+        "name": "macbook",
+        "price": 10000000000000
       }
     }
   }

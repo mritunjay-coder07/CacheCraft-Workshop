@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const router = require('./Routes/routes.js');
 
+app.use(express.json());
 app.use(router);
 
 

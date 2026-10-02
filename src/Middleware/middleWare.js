@@ -1,17 +1,17 @@
-const {readCache,writeCache} = require('../Service/services.js')
+const { readCache } = require('../Service/services.js');
 
-async function cacheMiddleWare(req,res,next){
-    
+async function cacheMiddleware(req, res, next) {
+
     let cache = await readCache();
 
-    key = req.url;
+    const key = req.url;
 
-    let urlCache = cache.find((x)=> {
-        return x.url == key
-    })
+    let urlCache = cache.find((x) => {
+        return x.url == key;
+    });
 
-    if (urlCache){
-        if (Date.now() - urlCache.product.dateAdded < (60 * 1000)){
+    if (urlCache) {
+        if (Date.now() - urlCache.product.dateAdded < (60 * 1000)) {
             return res.status(200).json(urlCache.product.product);
         }
     }
@@ -19,5 +19,4 @@ async function cacheMiddleWare(req,res,next){
     next();
 }
 
-module.exports = {cacheMiddleWare};
-
+module.exports = { cacheMiddleware };
